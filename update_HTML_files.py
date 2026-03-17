@@ -24,11 +24,9 @@ N_CHAPTERS = 30;
 
 def readDataFile():
     dataFileName = 'gif_data.csv'
-    file = pd.read_csv(dataFileName)
-    
-    data = file.to_numpy()
-    
-    return data
+    file = pd.read_csv(dataFileName, keep_default_na=False)
+    file['chapter(int)'] = pd.to_numeric(file['chapter(int)'], errors='coerce').fillna(0).astype(int)
+    return file.values.tolist()
 
 def listChapterGifs(data):
     content = '<ul> \n'
@@ -39,8 +37,8 @@ def listChapterGifs(data):
         chapter = data[i][CH_COL]
         
         content = content + '<li> \n'
-        content = content + '<a href= "chapter_' + str(chapter) + '/' + name + '/' + name + '.gif" target="_blank"> \n'
-        content = content + '<img src="chapter_' + str(chapter) + '/' + name + '/' + name + '.gif" alt="clickableimage" width="124" height="70">\n'
+        content = content + '<a href="../animations/' + name + '.gif" target="_blank"> \n'
+        content = content + '<img src="../animations/' + name + '.gif" alt="clickableimage" width="124" height="70">\n'
         content = content + '</a>  <span style="font-weight:normal">' + disName + '</span> \n </li> \n'
     
     content = content + '</ul> \n'
@@ -181,6 +179,9 @@ def makeIndex(data):
         
         for j in range(TAG_START,len(line)):
             tag = line[j]
+            tag = str(tag).strip()
+            if not tag:
+                continue
             tag = tag.capitalize()
             
             if tag not in index.keys():
@@ -365,8 +366,11 @@ def makeFileStructure(data):
             images = row[IMAGES_COL]
             additional = row[SUP_COL]
             tags = []
-            for k in range(TAG_START,len(row)):
-                tags.append(row[k].capitalize())
+            for k in range(TAG_START, len(row)):
+                tag = str(row[k]).strip()
+                if not tag:
+                    continue
+                tags.append(tag.capitalize())
             
             tags = sorted(tags)
             
@@ -374,7 +378,7 @@ def makeFileStructure(data):
             content = content + '<ul>\n'
             
             content = content + '<li>\n'
-            content = content + '<a href="gifs_chapter/chapter_' + str(chapter) + '/' + name + '/' + name + '.gif" target="_blank">' + name + '.gif</a> \n'
+            content = content + '<a href="animations/' + name + '.gif" target="_blank">' + name + '.gif</a> \n'
             content = content + '</li>\n'
             
             if sourceCode == 'y':
