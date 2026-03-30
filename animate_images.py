@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+## -*- coding: utf-8 -*-
 """
 Created on Tue Feb  6 23:24:00 2024
 
@@ -7,17 +7,30 @@ Created on Tue Feb  6 23:24:00 2024
 import imageio
 from os import listdir
 from os.path import isfile, join
+from pathlib import Path
 
-def main(name,chapter):
+def main(name, chapter, display_name=None):
+    """
+    name: folder name under gifs_chapter/chapter_X/
+    display_name: final GIF filename in animations/ (without .gif)
+    """
     images = []
-    
-    imagePath = 'D:/Graduate_Research/Animated_gif_library/gifs_chapter/chapter_' + str(chapter) + '/' + name + '/' + name + '_images/'
+
+    source_name = str(name).strip()
+    output_name = str(display_name).strip() if display_name else source_name
+
+    repo_root = Path(".").resolve()
+    imagePath = repo_root / "gifs_chapter" / f"chapter_{chapter}" / source_name / f"{source_name}_images"
+    gifDir = repo_root / "animations"
+    gifDir.mkdir(parents=True, exist_ok=True)
+    gifPath = gifDir / f"{output_name}.gif"
+
     fileNames = [f for f in listdir(imagePath) if isfile(join(imagePath, f))]
-    
-    gifPath = 'D:/Graduate_Research/Animated_gif_library/gifs_chapter/chapter_' + str(chapter) + '/' + name + '/' + name + '.gif'
-    
+    fileNames.sort()
+
     for fileName in fileNames:
         print(fileName)
-        fileName = imagePath + fileName
-        images.append(imageio.imread(fileName))
-        imageio.mimsave(gifPath, images)
+        images.append(imageio.imread(imagePath / fileName))
+
+    imageio.mimsave(gifPath, images)
+    print(f"Saved: {gifPath}")
