@@ -1,14 +1,215 @@
-<!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Astronomy Animated Gif Library</title>
+    <title>AAGL-Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 850px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+          Questions? Contact:Professor Ragozzine | <a href="mailto:darin_ragozzine@byu.edu">darin_ragozzine@byu.edu</a></p>
+            color: white;
+            padding: 15px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+            .dropdown-toggle {
+                text-align: left
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Astronomy Animated Gif Library</h1>
-  <ul>
-    <li><a href="file_list.html">File List</a></li>
-    <li><a href="gif_index.html">GIF Index</a></li>
-  </ul>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="images\haumea.jpg" class="rounded float-left" alt="haumea" height="50" width="50">
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                     <li><a href="about.html">About</a></li> 
+                    <li>
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gif Library
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="gifs_chapter/chapter_1.html">Chapter 1: Science and the Universe</a></li>
+                            <li><a href="gifs_chapter/chapter_2.html">Chapter 2: Observing the Sky</a></li>
+                            <li><a href="gifs_chapter/chapter_3.html">Chapter 3: Orbits & Gravity</a></li>
+                            <li><a href="gifs_chapter/chapter_4.html">Chapter 4: Earth, Moon, & Sky</a></li>
+                            <li><a href="gifs_chapter/chapter_5.html">Chapter 5: Radiation & Spectra</a></li>
+                            <li><a href="gifs_chapter/chapter_6.html">Chapter 6: Astronomical Instruments</a></li>
+                            <li><a href="gifs_chapter/chapter_7.html">Chapter 7: Other Worlds</a></li>
+                            <li><a href="gifs_chapter/chapter_8.html">Chapter 8: Earth</a></li>
+                            <li><a href="gifs_chapter/chapter_9.html">Chapter 9: Cratered Worlds</a></li>
+                            <li><a href="gifs_chapter/chapter_10.html">Chapter 10: Venus & Mars</a></li>
+                            <li><a href="gifs_chapter/chapter_11.html">Chapter 11: Giant Planets</a></li>
+                            <li><a href="gifs_chapter/chapter_12.html">Chapter 12: Rings, Moons, & Pluto</a></li>
+                            <li><a href="gifs_chapter/chapter_13.html">Chapter 13: Comets & Asteroids</a></li>
+                            <li><a href="gifs_chapter/chapter_14.html">Chapter 14: Solar System Origins</a></li>
+                            <li><a href="gifs_chapter/chapter_15.html">Chapter 15: The Sun - Classification</a></li>
+                            <li><a href="gifs_chapter/chapter_16.html">Chapter 16: The Sun - Energy</a></li>
+                            <li><a href="gifs_chapter/chapter_17.html">Chapter 17: Starlight</a></li>
+                            <li><a href="gifs_chapter/chapter_18.html">Chapter 18: The Stars</a></li>
+                            <li><a href="gifs_chapter/chapter_19.html">Chapter 19: Distances</a></li>
+                            <li><a href="gifs_chapter/chapter_20.html">Chapter 20: Gas & Dust</a></li>
+                            <li><a href="gifs_chapter/chapter_21.html">Chapter 21: Exoplanets</a></li>
+                            <li><a href="gifs_chapter/chapter_22.html">Chapter 22: Lifecyle of Stars</a></li>
+                            <li><a href="gifs_chapter/chapter_23.html">Chapter 23: Death of Stars</a></li>
+                            <li><a href="gifs_chapter/chapter_24.html">Chapter 24: Black Holes</a></li>
+                            <li><a href="gifs_chapter/chapter_25.html">Chapter 25: The Milky Way</a></li>
+                            <li><a href="gifs_chapter/chapter_26.html">Chapter 26: Galaxies</a></li>
+                            <li><a href="gifs_chapter/chapter_27.html">Chapter 27: Active Galaxies</a></li>
+                            <li><a href="gifs_chapter/chapter_28.html">Chapter 28: Galactic Evolution</a></li>
+                            <li><a href="gifs_chapter/chapter_29.html">Chapter 29: The Big Bang</a></li>
+                            <li><a href="gifs_chapter/chapter_30.html">Chapter 30: Life in the Universe</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="gif_index.html">Index</a></li>
+                    <li><a href="file_list.html">File List</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+        <div class="row content">
+           <div class="col-sm-2 sidenav text-left">
+</div>
+            <div class="col-sm-8 text-left">
+                <h1>Introduction to the Astronomy Animated Gif Library</h1>
+                <p>
+                    Introductory astronomy survey courses for non-science majors (”Astro 101”) reach an estimated
+                    250,000 students per year (Prather et al., 2009). This course is regarded as an
+                    important (and often last) way of improving quantitative and scientific reasoning in 10%
+                    of U. S. college graduates.
+                </p>
+
+                <p>
+                    Astronomical ideas are challenging for introductory students to grasp at a conceptual
+                    level, even when using a variety of active learning techniques (French and Prather, 2020).
+                    Many of the more-challenging concepts revolve around the dynamical and temporal evolution
+                    of astronomical concepts like lunar phases, transiting planets, and cosmology. Yet these
+                    concepts are typically illustrated in Astro 101 classrooms using static images.
+                    Instructors should use demonstrations, videos, simulations, and other dynamic media
+                    to significantly improve conceptual understanding of time-varying astronomical concepts.
+                    Within this gap, we propose to focus on animated gifs as the lowest common denominator
+                    for non-static images in the world today. They are ubiquitous on the internet, easy to place
+                    into lecture slides, and ideal for the coming generation of online textbooks. They can even be
+                    embedded in PDFs, although this is not yet common. The format is stable, small, long-lived,
+                    and easy to create. Animated gifs also transcend language, making them instantly accessible
+                    to the whole world, especially when coupled with descriptive “alt-text” for the blind and
+                    visually impaired community.
+                </p>
+
+                <p>
+                    An informal poll of BYU students unsurprisingly found that 100% of students think that
+                    animations are more impactful and/or lead to better learning than static images. Detailed
+                    studies (e.g., Ploetzner et al., 2021) on the use of instructional animations show that they
+                    are generally effective, but there are design principles that are important to consider both in
+                    the creation and instructional implementation of an animation. There is evidence to support
+                    the idea that animations particularly benefit learning by women Coward et al. (2012).
+                    PI Ragozzine hired a TA to scour Wikipedia/Wikimedia for astronomy animations to
+                    produce and she only found 23 that were better than 7/10 for pedagogical value. With the
+                    high educational potential of animated gifs, the lack of existing resources, and the passion
+                    of PI Ragozzine for this project, we motivate:
+                    Broader Impacts Objective 3 (BI-O3): Develop and populate the Astronomy
+                    Animated Gif Library (AAGL) with a goal of 10 million animations viewed.
+                    We propose to create 100 new animations covering all topics in introductory astronomy
+                    with a focus on conceptual understanding. These animations will be carefully planned for
+                    pedagogical value motivated by specific learning outcomes, following best practices (e.g.
+                    Ploetzner et al., 2021; French and Prather, 2020). They will be high-quality, informative,
+                    aesthetically-pleasing, open-source, and freely-shareable (under a CC-BY-4.0 license, see
+                    19
+                    the Data Management Plan). They will be piloted in BYU astronomy courses (and possibly
+                    elsewhere) with feedback will be used to improve the animations and their pedagogical value.
+                    The AAGL will be a GitHub-based webpage that gathers, indexes, and organizes all
+                    of these animated gifs and makes them freely available thanks to NSF support. GitHub
+                    also enables others to contribute their own high-quality animations (through Pull Requests)
+                    and for long-term maintenance by a community beyond the funding of this proposal. Most
+                    of our animated gifs will be created using straightforward python codes that will also be
+                    shared as part of the AAGL so that advanced users will be able to modify these to suit their
+                    specific educational needs. These will use consistent themes and color schemes (e.g., gravitational
+                    forces always represented by green arrows) to strengthen understanding across topics.
+                    Development, management, and advertising of AAGL will be significantly supported by a
+                    dedicated undergraduate students likely taken from BYU’s award-winning physics teaching
+                    and computer animation programs.
+                </p>
+                <p>
+                    We will encourage multiple educational uses for the animated gifs that are part of AAGL:
+                    uploading to Wikimedia Commons for use in astronomy-themed Wikipedia pages; used in
+                    BYU’s Astronomy classes; and used by dozens of Astro 101 instructors after advertising
+                    AAGL at conferences, on email lists, etc. We are particularly excited to be partnering with
+                    the OpenStax Astronomy free online open-source textbook (see Letters of Collaboration).
+                    Astronomy is reported to be used in more than 1000 astronomy classrooms by about 80,000
+                    students per year. Despite its online nature, all images are currently static, though there
+                    are links to videos and applets. We are in discussions with OpenStax on incorporating
+                    our animated gifs directly into the online version textbook. Our animations and associated
+                    lecture slides would be placed in the adjacent Open Education Resources Commons Hub.
+                    We will measure success by estimating the number of times our animations are used for
+                    instruction, with a goal of providing 10,000,000 views by the end of the funding period.
+                    Using Wikipedia pageviews, major astronomy topics alone are visited millions of times per
+                    year. Use in OpenStax Astronomy could readily result in a million views per year. We
+                    expect use at BYU alone to reach half a million years. Adoption by even 3% of Astro
+                    101 instructors could easily lead to another few million views. Although we will not be able
+                    to quantitatively measure the extent of AAGL beyond BYU and OpenStax online, using
+                    Wikipedia pageviews, OpenStax tracking, and AAGL download statistics, we can estimate
+                    the impact of the AAGL. We look forward to over 10,000,000 ”Aha!” moments enabled
+                    through animation of astronomical concepts.
+                </p>
+            </div>
+            <div class="col-sm-2 sidenav text-left">
+</div>
+        </div>
+    </div>
+
+   <footer class="container-fluid text-center"> 
+    <div class="footer-container">
+        <p><strong>Astronomy Animated GIF Library</strong></p>
+      <p>Questions? Contact Dr. Ragozzine | <a href="mailto:darin_ragozzine@byu.edu">darin_ragozzine@byu.edu</a></p>
+    </div>
+</footer>
+
+
 </body>
 </html>

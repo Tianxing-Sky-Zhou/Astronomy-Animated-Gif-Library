@@ -1,61 +1,23 @@
-<!DOCTYPE html> 
- <html lang="en"> 
- <head> 
- <title>AAGL-Index</title>
-<meta charset="utf-8"> 
- <meta name="viewport" content="width=device-width, initial-scale=1"> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-<style> 
- .navbar { 
- margin-bottom: 0; 
- border-radius: 0; 
- } 
- /* Set height of the grid so .sidenav can be 100% (adjust as needed) */ 
-.row.content { 
- height: 850px 
- } 
-.sidenav { 
- padding-top: 20px; 
- background-color: #f1f1f1; 
- height: 100%; 
- } 
-footer { 
- background-color: #555; 
- color: white; 
- padding: 15px; 
- } 
-/* On small screens, set height to auto for sidenav and grid */ 
- @media screen and (max-width: 767px) { 
-.sidenav { 
- height: auto; 
- padding: 15px; 
- } 
-.row.content { 
- height: auto; 
- } 
- .dropdown-toggle { 
- text-align: left 
- } 
-} 
- </style> 
- </head> 
- <body> 
-<nav class="navbar navbar-inverse"> 
-<div class="container-fluid"> 
-<div class="navbar-header"> 
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> 
-<span class="icon-bar"></span> 
-<span class="icon-bar"></span> 
-<span class="icon-bar"></span> 
-</button> 
-<img src="images/haumea.jpg" class="rounded float-left" alt="haumea" height="50" width="50"> 
-</div> 
-<div class="collapse navbar-collapse" id="myNavbar"> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About - AAGL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .navbar { margin-bottom: 0; border-radius: 0; }
+        .row.content { height: auto; padding: 40px; }
+        footer { background-color: #555; color: white; padding: 15px; }
+    </style>
+</head>
+<body>
+
 <ul class="nav navbar-nav"> 
 <li><a href="index.html">Home</a></li> 
-      <li><a href="about.html">About</a></li> 
+      <li class="active"><a href="about.html">About</a></li> 
 <li> 
 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
 Gif Library 
@@ -96,51 +58,21 @@ Gif Library
 <li class="active"><a href="gif_index.html">Index</a></li> 
 <li><a href="file_list.html">File List</a></li> 
 </ul> 
-</div> 
-</div> 
-</nav> 
-<div class="container-fluid text-center"> 
-<div class="row content"> 
-<div class="col-sm-2 sidenav"> 
-</div> 
-<div class="col-sm-8 text-left"> 
-<h1>Gif Index</h1> 
-<ul> 
-<li>Exoplanets
-<ul> 
-<li>
-<a href="gifs_chapter/chapter_21/radial_velocity/radial_velocity.gif" target="_blank">Radial Velocity</a> 
-</li>
-</ul>
- </li> 
-<li>Orbits
-<ul> 
-<li>
-<a href="gifs_chapter/chapter_3/interstellar_comet_orbits/interstellar_comet_orbits.gif" target="_blank">Interstellar Comet Orbits</a> 
-</li>
-<li>
-<a href="gifs_chapter/chapter_3/keplers_first/keplers_first.gif" target="_blank">Kepler's First Law</a> 
-</li>
-<li>
-<a href="gifs_chapter/chapter_3/keplers_first_ellipse/keplers_first_ellipse.gif" target="_blank">Kepler's First Law - ecc < 1</a> 
-</li>
-<li>
-<a href="gifs_chapter/chapter_3/pluto_charon_orbit/pluto_charon_orbit.gif" target="_blank">Charon Orbiting Pluto</a> 
-</li>
-</ul>
- </li> 
-</ul> 
-</div> 
-<div class="col-sm-2 sidenav"> 
-<div class="well"> 
-</div> 
-<div class="well"> 
-</div> 
-</div> 
-</div> 
-</div> 
+
+<div class="container">
+    <div class="row content">
+        <div class="col-sm-offset-1 col-sm-10">
+            <h1>About the AAGL</h1>
+            <p>The Astronomy Animated Gif Library (AAGL) was started by Darin Ragozzine at Brigham Young University...</p>
+            </div>
+    </div>
+</div>
+
 <footer class="container-fluid text-center"> 
-<p>Footer Text</p> 
-</footer> 
-</body> 
-</html> 
+    <p><strong>Astronomy Animated GIF Library</strong></p>
+    <p>Questions? Contact Dr. Ragozzine | <a href="mailto:darin_ragozzine@byu.edu">darin_ragozzine@byu.edu</a></p>
+</footer>
+
+</body>
+</html>
+
