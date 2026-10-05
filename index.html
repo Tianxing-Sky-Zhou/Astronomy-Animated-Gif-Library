@@ -9,31 +9,44 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-            margin-bottom: 0;
-            border-radius: 0;
-        }
+        /* Ensure the body takes up the full screen */
+html, body {
+    height: 100%;
+}
 
-        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {
-            height: 850px
-        }
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
 
-        /* Set gray background color and 100% height */
-        .sidenav {
-            padding-top: 20px;
-            background-color: #f1f1f1;
-            height: 100%;
-        }
+/* Flexbox makes the sidebars stretch to the bottom of the content */
+.row.content {
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 100vh; 
+}
 
+/* Set gray background color */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: auto; /* Lets flexbox handle the stretching */
+}
+
+/* On small screens, switch back to normal block layout */
+@media screen and (max-width: 767px) {
+    .row.content {
+        display: block;
+        height: auto;
+    }
+}
         /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-          Questions? Contact:Professor Ragozzine | <a href="mailto:darin_ragozzine@byu.edu">darin_ragozzine@byu.edu</a></p>
-            color: white;
-            padding: 15px;
-        }
-
+        footer { 
+ background-color: #555; 
+ color: white; 
+ padding: 15px; 
+ } 
         /* On small screens, set height to 'auto' for sidenav and grid */
         @media screen and (max-width: 767px) {
             .sidenav {
@@ -206,7 +219,7 @@
    <footer class="container-fluid text-center"> 
     <div class="footer-container">
         <p><strong>Astronomy Animated GIF Library</strong></p>
-      <p>Questions? Contact Dr. Ragozzine | <a href="mailto:darin_ragozzine@byu.edu">darin_ragozzine@byu.edu</a></p>
+      <p> Questions? Contact Professor Ragozzine | <a href="mailto:darin_ragozzine@byu.edu">darin_ragozzine@byu.edu</a></p>
     </div>
 </footer>
 

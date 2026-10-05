@@ -8,71 +8,139 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        .navbar { margin-bottom: 0; border-radius: 0; }
-        .row.content { height: auto; padding: 40px; }
-        footer { background-color: #555; color: white; padding: 15px; }
-    </style>
+/* 1. Base Setup */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* 2. Navbar */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* 3. Main Layout Structure */
+.row.content {
+    display: flex;
+    flex-flow: row wrap;
+    /* min-height: 100vh can sometimes cause a double scrollbar with nav/footer. 
+       If that happens, use 90vh or calc(100vh - 100px) */
+    min-height: 100vh; 
+}
+
+/* 4. Sidebars */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: auto; /* Flexbox handles the stretching */
+}
+
+/* 5. Footer (Cleaned of HTML text) */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+    clear: both;
+}
+
+/* 6. Responsive Rules (Combined) */
+@media screen and (max-width: 767px) {
+    .row.content {
+        display: block;
+        height: auto;
+    }
+    
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .dropdown-toggle {
+        text-align: left;
+    }
+}
+</style>
 </head>
 <body>
 
-<ul class="nav navbar-nav"> 
-<li><a href="index.html">Home</a></li> 
-      <li class="active"><a href="about.html">About</a></li> 
-<li> 
-<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-Gif Library 
-</a> 
-<ul class="dropdown-menu"> 
-<li><a href="gifs_chapter/chapter_1.html">Chapter 1: Science and the Universe</a></li> 
-<li><a href="gifs_chapter/chapter_2.html">Chapter 2: Observing the Sky</a></li> 
-<li><a href="gifs_chapter/chapter_3.html">Chapter 3: Orbits & Gravity</a></li> 
-<li><a href="gifs_chapter/chapter_4.html">Chapter 4: Earth, Moon, & Sky</a></li> 
-<li><a href="gifs_chapter/chapter_5.html">Chapter 5: Radiation & Spectra</a></li> 
-<li><a href="gifs_chapter/chapter_6.html">Chapter 6: Astronomical Instraments</a></li> 
-<li><a href="gifs_chapter/chapter_7.html">Chapter 7: Other Worlds</a></li> 
-<li><a href="gifs_chapter/chapter_8.html">Chapter 8: Earth</a></li> 
-<li><a href="gifs_chapter/chapter_9.html">Chapter 9: Cratered Worlds</a></li> 
-<li><a href="gifs_chapter/chapter_10.html">Chapter 10: Venus & Mars</a></li> 
-<li><a href="gifs_chapter/chapter_11.html">Chapter 11: Giant Planets</a></li> 
-<li><a href="gifs_chapter/chapter_12.html">Chapter 12: Rings, Moons, & Pluto</a></li> 
-<li><a href="gifs_chapter/chapter_13.html">Chapter 13: Coments & Asteroids</a></li> 
-<li><a href="gifs_chapter/chapter_14.html">Chapter 14: Solar System Origins</a></li> 
-<li><a href="gifs_chapter/chapter_15.html">Chapter 15: The Sun - Classification</a></li> 
-<li><a href="gifs_chapter/chapter_16.html">Chapter 16: The Sun - Energy</a></li> 
-<li><a href="gifs_chapter/chapter_17.html">Chapter 17: Starlight</a></li> 
-<li><a href="gifs_chapter/chapter_18.html">Chapter 18: The Stars</a></li> 
-<li><a href="gifs_chapter/chapter_19.html">Chapter 19: Distances</a></li> 
-<li><a href="gifs_chapter/chapter_20.html">Chapter 20: Gas & Dust</a></li> 
-<li><a href="gifs_chapter/chapter_21.html">Chapter 21: Exoplanets</a></li> 
-<li><a href="gifs_chapter/chapter_22.html">Chapter 22: Lifecycle of Stars</a></li> 
-<li><a href="gifs_chapter/chapter_23.html">Chapter 23: Death of Stars</a></li> 
-<li><a href="gifs_chapter/chapter_24.html">Chapter 24: Black Holes</a></li> 
-<li><a href="gifs_chapter/chapter_25.html">Chapter 25: The Milky Way</a></li> 
-<li><a href="gifs_chapter/chapter_26.html">Chapter 26: Galaxies</a></li> 
-<li><a href="gifs_chapter/chapter_27.html">Chapter 27: Active Galaxies</a></li> 
-<li><a href="gifs_chapter/chapter_28.html">Chapter 28: Galactic Evolution</a></li> 
-<li><a href="gifs_chapter/chapter_29.html">Chapter 29: The Big Bang</a></li> 
-<li><a href="gifs_chapter/chapter_30.html">Chapter 30: Life in the Univers</a></li> 
-</ul> 
-</li> 
-<li class="active"><a href="gif_index.html">Index</a></li> 
-<li><a href="file_list.html">File List</a></li> 
-</ul> 
-
-<div class="container">
-    <div class="row content">
-        <div class="col-sm-offset-1 col-sm-10">
-            <h1>About the AAGL</h1>
-            <p>The Astronomy Animated Gif Library (AAGL) was started by Darin Ragozzine at Brigham Young University...</p>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="images/haumea.jpg" class="rounded float-left" alt="haumea" height="50" width="50">
             </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gif Library
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="gifs_chapter/chapter_1.html">Chapter 1: Science and the Universe</a></li>
+                            <li><a href="gifs_chapter/chapter_2.html">Chapter 2: Observing the Sky</a></li>
+                            <li><a href="gifs_chapter/chapter_3.html">Chapter 3: Orbits & Gravity</a></li>
+                            <li><a href="gifs_chapter/chapter_4.html">Chapter 4: Earth, Moon, & Sky</a></li>
+                            <li><a href="gifs_chapter/chapter_5.html">Chapter 5: Radiation & Spectra</a></li>
+                            <li><a href="gifs_chapter/chapter_6.html">Chapter 6: Astronomical Instruments</a></li>
+                            <li><a href="gifs_chapter/chapter_7.html">Chapter 7: Other Worlds</a></li>
+                            <li><a href="gifs_chapter/chapter_8.html">Chapter 8: Earth</a></li>
+                            <li><a href="gifs_chapter/chapter_9.html">Chapter 9: Cratered Worlds</a></li>
+                            <li><a href="gifs_chapter/chapter_10.html">Chapter 10: Venus & Mars</a></li>
+                            <li><a href="gifs_chapter/chapter_11.html">Chapter 11: Giant Planets</a></li>
+                            <li><a href="gifs_chapter/chapter_12.html">Chapter 12: Rings, Moons, & Pluto</a></li>
+                            <li><a href="gifs_chapter/chapter_13.html">Chapter 13: Comets & Asteroids</a></li>
+                            <li><a href="gifs_chapter/chapter_14.html">Chapter 14: Solar System Origins</a></li>
+                            <li><a href="gifs_chapter/chapter_15.html">Chapter 15: The Sun - Classification</a></li>
+                            <li><a href="gifs_chapter/chapter_16.html">Chapter 16: The Sun - Energy</a></li>
+                            <li><a href="gifs_chapter/chapter_17.html">Chapter 17: Starlight</a></li>
+                            <li><a href="gifs_chapter/chapter_18.html">Chapter 18: The Stars</a></li>
+                            <li><a href="gifs_chapter/chapter_19.html">Chapter 19: Distances</a></li>
+                            <li><a href="gifs_chapter/chapter_20.html">Chapter 20: Gas & Dust</a></li>
+                            <li><a href="gifs_chapter/chapter_21.html">Chapter 21: Exoplanets</a></li>
+                            <li><a href="gifs_chapter/chapter_22.html">Chapter 22: Lifecycle of Stars</a></li>
+                            <li><a href="gifs_chapter/chapter_23.html">Chapter 23: Death of Stars</a></li>
+                            <li><a href="gifs_chapter/chapter_24.html">Chapter 24: Black Holes</a></li>
+                            <li><a href="gifs_chapter/chapter_25.html">Chapter 25: The Milky Way</a></li>
+                            <li><a href="gifs_chapter/chapter_26.html">Chapter 26: Galaxies</a></li>
+                            <li><a href="gifs_chapter/chapter_27.html">Chapter 27: Active Galaxies</a></li>
+                            <li><a href="gifs_chapter/chapter_28.html">Chapter 28: Galactic Evolution</a></li>
+                            <li><a href="gifs_chapter/chapter_29.html">Chapter 29: The Big Bang</a></li>
+                            <li><a href="gifs_chapter/chapter_30.html">Chapter 30: Life in the Universe</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gif_index.html">Index</a></li>
+                    <li><a href="file_list.html">File List</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center">    
+    <div class="row content">
+        <div class="col-sm-2 sidenav"></div>
+
+        <div class="col-sm-8 text-left"> 
+            <h1>About the AAGL</h1>
+            <p>The Astronomy Animated Gif Library (AAGL) was started by Darin Ragozzine at Brigham Young University (BYU) to support astronomy educators by gathering and cataloging animations. For questions or suggestions, please contact <a href="mailto:darin_ragozzine@byu.edu">darin_ragozzine@byu.edu</a>. It was originally conceived and organized in April 2020. A few students, notably Maya Laker, have helped with the organization and gathering. In July 2021, Dr. Ragozzine submitted an NSF CAREER proposal that included development of the AAGL which was selected in January 2022.</p>
+        </div>
+
+        <div class="col-sm-2 sidenav"></div>
     </div>
 </div>
 
-<footer class="container-fluid text-center"> 
-    <p><strong>Astronomy Animated GIF Library</strong></p>
-    <p>Questions? Contact Dr. Ragozzine | <a href="mailto:darin_ragozzine@byu.edu">darin_ragozzine@byu.edu</a></p>
-</footer>
+    <footer class="container-fluid text-center"> 
+        <div class="footer-container">
+            <p><strong>Astronomy Animated GIF Library</strong></p>
+            <p>Questions? Contact Dr. Ragozzine | <a href="mailto:darin_ragozzine@byu.edu">darin_ragozzine@byu.edu</a></p>
+        </div>
+    </footer>
 
 </body>
 </html>
-

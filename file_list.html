@@ -8,18 +8,39 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 <style> 
- .navbar { 
- margin-bottom: 0; 
- border-radius: 0; 
- } 
- .row.content { 
- height: 850px 
- } 
-.sidenav { 
- padding-top: 20px; 
- background-color: #f1f1f1; 
- height: 100%; 
- } 
+ /* Ensure the body takes up the full screen */
+html, body {
+    height: 100%;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Flexbox makes the sidebars stretch to the bottom of the content */
+.row.content {
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 100vh; 
+}
+
+/* Set gray background color */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: auto; /* Lets flexbox handle the stretching */
+}
+
+/* On small screens, switch back to normal block layout */
+@media screen and (max-width: 767px) {
+    .row.content {
+        display: block;
+        height: auto;
+    }
+}
+
 footer { 
  background-color: #555; 
  color: white; 
@@ -1047,7 +1068,9 @@ Tags: Blackholes, Dark matter, Particles
 </li> 
 </ul> 
 </div> 
-<div class="col-sm-2 sidenav"></div> 
+<div class="col-sm-2 sidenav"> 
+</div> 
+</div> 
 </div> 
 </div> 
 <footer class="container-fluid text-center"> 
